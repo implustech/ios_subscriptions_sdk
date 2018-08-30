@@ -1,0 +1,16 @@
+PODS:
+  - Apptilaus (1.0.0)
+
+DEPENDENCIES:
+  - Apptilaus (from `../..`)
+
+EXTERNAL SOURCES:
+  Apptilaus:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  Apptilaus: b7f82240ebdf7385585c3886a17473674d1b0954
+
+PODFILE CHECKSUM: ef3a60669c283f59a0ac94996ee90efe0b4cac5d
+
+COCOAPODS: 1.4.0
