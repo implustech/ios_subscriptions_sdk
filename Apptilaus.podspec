@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "Apptilaus"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Subscription Analytics for Mobile Apps."
   s.description      = "Install Apptilaus SDK and analyse subscriptions from the App Store and other sources, manage your products and features delivery and process cross-platform purchases!"
   s.homepage         = "https://github.com/Apptilaus/"
-  s.social_media_url   = "https://facebook.com/apptilaus"
+  s.social_media_url = "https://facebook.com/apptilaus"
   s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Apptilaus" => "ios-sdk@apptilaus.com" }
   s.source           = { :git => "https://github.com/Apptilaus/ios_subscriptions_sdk.git", :tag => s.version.to_s }
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.framework      = 'SystemConfiguration'
   s.ios.weak_framework = 'AdSupport', 'iAd', 'StoreKit'
   s.requires_arc   = true
-  s.swift_version = "3.2"
+  s.swift_version = "4.2"
 
   s.documentation_url = 'https://apptilaus.com/docs'
 

@@ -22,7 +22,7 @@ public class ApptilausManager: NSObject {
         if (enableSessionTracking) {
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(registerSessionIfNeeded(_:)),
-                                                   name: NSNotification.Name.UIApplicationDidBecomeActive,
+                                                   name: UIApplication.didBecomeActiveNotification,
                                                    object: nil)
         }
     }
@@ -73,10 +73,16 @@ public class ApptilausManager: NSObject {
         
         var queryItems:[URLQueryItem] = []
         
+//        if let podVersion = Bundle(for: type(of: self)).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+//            queryItems.append(URLQueryItem(name: "sdk_version", value: podVersion))
+//        }
+        
         queryItems.append(URLQueryItem(name: timeParamName, value: String(lround(nowMillis))))
         
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
             queryItems.append(URLQueryItem(name: "ios_idfa", value: ASIdentifierManager.shared().advertisingIdentifier.uuidString))
+        } else {
+            queryItems.append(URLQueryItem(name: "ios_idfa", value: "00000000-0000-0000-0000-000000000000"))
         }
         
         if let idfv = UIDevice.current.identifierForVendor {
@@ -148,10 +154,18 @@ public class ApptilausManager: NSObject {
         }
         
         var queryItems:[URLQueryItem] = []
+        
+//        if let podVersion = Bundle(for: type(of: self)).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+//            queryItems.append(URLQueryItem(name: "version", value: podVersion))
+//        }
 
+        let idfaString: String
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
-            queryItems.append(URLQueryItem(name: "ios_idfa", value: ASIdentifierManager.shared().advertisingIdentifier.uuidString))
+            idfaString = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        } else {
+            idfaString = "00000000-0000-0000-0000-000000000000"
         }
+        queryItems.append(URLQueryItem(name: "ios_idfa", value: idfaString))
         
         if let idfv = UIDevice.current.identifierForVendor {
             queryItems.append(URLQueryItem(name: "ios_idfv", value: idfv.uuidString))
@@ -283,16 +297,20 @@ private class TransactionProductRequestDelegate: NSObject, SKProductsRequestDele
     private func params(for product: SKProduct) -> [String : Any]? {
         var params: [String : Any] = [:]
         
+        if let podVersion = Bundle(for: type(of: self)).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+            params["sdk_version"] = podVersion
+        }
+        
         if transaction.transactionState != .purchased {
             print("[Apptilaus]: transaction \(transaction) is in incorrect state (\(transaction.transactionState))")
             return nil
         }
         
+        
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
             params["ios_idfa"] = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         } else {
-            print("[Apptilaus]: IDFA is not available")
-            return nil
+            params["ios_idfa"] = "00000000-0000-0000-0000-000000000000"
         }
         
         if let idfv = UIDevice.current.identifierForVendor {
