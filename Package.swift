@@ -1,6 +1,6 @@
 // swift-tools-version:4.0
 /*
- Copyright 2018 Apptilaus
+ Copyright 2019 Apptilaus
  Licensed under MIT License
  See LICENSE
 */

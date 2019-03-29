@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/cocoapods/v/Apptilaus.svg?style=flat)](https://cocoapods.org/pods/Apptilaus)
+[![License](https://img.shields.io/cocoapods/l/Apptilaus.svg?style=flat)](http://cocoapods.org/pods/Apptilaus)
+
 ## Overview ##
 
 **Apptilaus** iOS SDK is an open-source SDK that provides a simplest way to analyse cross-device subscriptions via [**Apptilaus Service**](https://apptilaus.com).
@@ -38,13 +41,13 @@ Here is the steps to integrate the Apptilaus SDK into your iOS project using Xco
 If you're using [CocoaPods][cocoapods], you can add the following line to your `Podfile`:
 
 ```ruby
-pod 'Apptilaus', '~> 1.0.1'
+pod 'Apptilaus', '~> 1.0.2'
 ```
 
 or:
 
 ```ruby
-pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.1'
+pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.2'
 ```
 
 Run `$ pod install` in your project directory.
