@@ -1,5 +1,8 @@
-[![Version](https://img.shields.io/cocoapods/v/Apptilaus.svg?style=flat)](https://cocoapods.org/pods/Apptilaus)
-[![License](https://img.shields.io/cocoapods/l/Apptilaus.svg?style=flat)](http://cocoapods.org/pods/Apptilaus)
+<img src="https://apptilaus.com/files/logo_green.svg"  width="300">
+
+## Apptilaus Subscriptions SDK for iOS
+
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Analyse%20subscriptions%20for%20your%20app!%20No%20SDK%20required!%20&url=http://apptilaus.com&hashtags=subscriptions,apps,appstore,analytics)&nbsp;[![Version](https://img.shields.io/cocoapods/v/Apptilaus.svg?style=flat)](https://cocoapods.org/pods/Apptilaus)&nbsp;[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)&nbsp;[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action)&nbsp;[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)&nbsp;[![License](https://img.shields.io/cocoapods/l/Apptilaus.svg?style=flat)](http://cocoapods.org/pods/Apptilaus)&nbsp;
 
 ## Overview ##
 
@@ -128,7 +131,7 @@ Objective-C:
 
 **Note**: Initialising the Apptilaus SDK like this is `very important`. Otherwise, it will not work properly.
 
-Replace `AppID` and `AppToken` with your App ID and App Token accordingly. You can find app credentials in the [admin panel][admin-panel]
+Replace `AppID` and `AppToken` with your App ID and App Token accordingly. You can find app credentials in the [admin panel][admin-panel].
 
 ---
 
@@ -207,6 +210,24 @@ Objective-C:
 
 ---
 
+### <a id="advanced-setup"></a>Advanced Setup
+
+#### <a id="session-tracking"></a>Session tracking
+
+To track first session and user activities, use the `sessionTrackingEnabled` parameter when calling setup method:
+
+Swift:
+```swift
+ApptilausManager.shared.setup(withAppId: apptilausAppId, appToken: apptilausToken, enableSessionTracking: true)
+```
+
+Objective-C:
+```objc
+[ApptilausManager.shared setupWithAppId:apptilausAppId appToken:apptilausToken enableSessionTracking:YES];
+```
+
+---
+
 ### <a id="gdpr-opt-out"></a>GDPR Right to Erasure
 
 In accordance with article 17 of the EU's General Data Protection Regulation (GDPR), you can notify Apptilaus when a user has exercised their right to be forgotten. Calling the following method will instruct the Apptilaus SDK to communicate the user's choice to be forgotten to the Apptilaus backend and data storage:
@@ -234,24 +255,6 @@ Objective-C:
 ---
 
 Upon receiving this information, Apptilaus will erase the user's data and the Apptilaus SDK will stop tracking the user. No requests from this device will stored by Apptilaus in the future.
-
----
-
-### <a id="advanced-setup"></a>Advanced Setup
-
-#### <a id="session-tracking"></a>Session tracking
-
-To track first session and user activities, use the `sessionTrackingEnabled` parameter when calling setup method:
-
-Swift:
-```swift
-ApptilausManager.shared.setup(withAppId: apptilausAppId, appToken: apptilausToken, enableSessionTracking: true)
-```
-
-Objective-C:
-```objc
-[ApptilausManager.shared setupWithAppId:apptilausAppId appToken:apptilausToken enableSessionTracking:YES];
-```
 
 ---
 
@@ -328,3 +331,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-125243602-3/ios_subscriptions_sdk/README.md)](https://github.com/igrigorik/ga-beacon)

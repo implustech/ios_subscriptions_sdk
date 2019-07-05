@@ -1,5 +1,12 @@
 ---
 
+### Version 1.0.3 (06th July 2019)
+#### Fixed
+
+- Transaction Handling and Deduplication
+
+------
+
 ### Version 1.0.2 (27th March 2019)
 #### Fixed
 

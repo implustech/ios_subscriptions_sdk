@@ -342,13 +342,13 @@ private class TransactionProductRequestDelegate: NSObject, SKProductsRequestDele
             }
         }
         
-//        if let receiptUrl = Bundle.main.appStoreReceiptURL,
-//            let receiptData = try? Data(contentsOf: receiptUrl) {
-//            params["receipt"] = receiptData.base64EncodedString()
-//        } else {
-//            print("[Apptilaus]: cannot read AppStore receipt")
-//            return nil
-//        }
+        if let receiptUrl = Bundle.main.appStoreReceiptURL,
+            let receiptData = try? Data(contentsOf: receiptUrl) {
+            params["receipt"] = receiptData.base64EncodedString()
+        } else {
+            print("[Apptilaus]: cannot read AppStore receipt")
+            return nil
+        }
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
