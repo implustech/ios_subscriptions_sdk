@@ -1,6 +1,6 @@
-<img src="https://apptilaus.com/files/logo_green.svg"  width="300">
+<img src="https://apptilaus.com/files/logo_green.svg"  width="200">
 
-## Apptilaus Subscriptions SDK for iOS
+## Apptilaus Subscription Analytics and Reporting, SDK for iOS
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Analyse%20subscriptions%20for%20your%20app!%20No%20SDK%20required!%20&url=http://apptilaus.com&hashtags=subscriptions,apps,appstore,analytics)&nbsp;[![Version](https://img.shields.io/cocoapods/v/Apptilaus.svg?style=flat)](https://cocoapods.org/pods/Apptilaus)&nbsp;[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)&nbsp;[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action)&nbsp;[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)&nbsp;[![License](https://img.shields.io/cocoapods/l/Apptilaus.svg?style=flat)](http://cocoapods.org/pods/Apptilaus)&nbsp;
 
@@ -44,13 +44,13 @@ Here is the steps to integrate the Apptilaus SDK into your iOS project using Xco
 If you're using [CocoaPods][cocoapods], you can add the following line to your `Podfile`:
 
 ```ruby
-pod 'Apptilaus', '~> 1.0.2'
+pod 'Apptilaus', '~> 1.0.4'
 ```
 
 or:
 
 ```ruby
-pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.2'
+pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.4'
 ```
 
 Run `$ pod install` in your project directory.
