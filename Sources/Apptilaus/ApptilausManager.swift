@@ -72,11 +72,7 @@ public class ApptilausManager: NSObject {
         }
         
         var queryItems:[URLQueryItem] = []
-        
-//        if let podVersion = Bundle(for: type(of: self)).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
-//            queryItems.append(URLQueryItem(name: "sdk_version", value: podVersion))
-//        }
-        
+                
         queryItems.append(URLQueryItem(name: timeParamName, value: String(lround(nowMillis))))
         
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
@@ -155,10 +151,6 @@ public class ApptilausManager: NSObject {
         
         var queryItems:[URLQueryItem] = []
         
-//        if let podVersion = Bundle(for: type(of: self)).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
-//            queryItems.append(URLQueryItem(name: "version", value: podVersion))
-//        }
-
         let idfaString: String
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
             idfaString = ASIdentifierManager.shared().advertisingIdentifier.uuidString
@@ -374,7 +366,7 @@ private class TransactionProductRequestDelegate: NSObject, SKProductsRequestDele
         
         if let userId = self.userId {
             params["user_id"] = userId
-        } //user_id is optional, so no `else` :)
+        } //user_id is optional, so no `else`
         
         
         for key in customParams.keys {

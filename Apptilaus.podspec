@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = "Apptilaus"
-  s.version             = "1.0.3"
+  s.version             = "1.0.4"
   s.summary             = "Subscription Analytics for Mobile Apps"
   s.description         = "Install Apptilaus SDK and analyse subscriptions from the App Store and other sources, manage your products and features delivery and process cross-platform purchases!"
   s.homepage            = "https://github.com/apptilaus/"
