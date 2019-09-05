@@ -1,5 +1,12 @@
 ---
 
+### Version 1.0.5 (1st September 2019)
+#### Fixed
+
+- Custom Server Set Up Updated
+
+---
+
 ### Version 1.0.4 (10th August 2019)
 #### Fixed
 

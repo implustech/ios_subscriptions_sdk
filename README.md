@@ -44,13 +44,13 @@ Here is the steps to integrate the Apptilaus SDK into your iOS project using Xco
 If you're using [CocoaPods][cocoapods], you can add the following line to your `Podfile`:
 
 ```ruby
-pod 'Apptilaus', '~> 1.0.4'
+pod 'Apptilaus', '~> 1.0.5'
 ```
 
 or:
 
 ```ruby
-pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.4'
+pod 'Apptilaus', :git => 'https://github.com/Apptilaus/ios_subscriptions_sdk.git', :tag => '1.0.5'
 ```
 
 Run `$ pod install` in your project directory.
@@ -265,14 +265,14 @@ To work with your own installation of Apptilaus Service you can also set a custo
 Swift:
 ```swift
 
-    ApptilausManager.shared.baseUrl = "https://subscriptions.custom.domain/v1/purchase/"
+    ApptilausManager.shared.sessionUrl = "https://subscriptions.custom.domain/"
 
 ```
 
 Objective-C:
 ```objc
 
-    ApptilausManager.shared.baseUrl = @"https://subscriptions.custom.domain/v1/purchase/";
+    ApptilausManager.shared.sessionUrl = @"https://subscriptions.custom.domain/";
 
 ```
 ---

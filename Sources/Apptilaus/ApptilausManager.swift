@@ -10,7 +10,8 @@ public class ApptilausManager: NSObject {
     
     @objc public var userId: String?
     @objc public var baseUrl: String = "https://api.apptilaus.com/"
-    
+    @objc public var sessionUrl: String = "https://device.apptilaus.com/"
+
     private var appId: String?
     private var appToken: String?
     private var delegates: Set<TransactionProductRequestDelegate> = []
@@ -41,8 +42,8 @@ public class ApptilausManager: NSObject {
             return
         }
         
-        guard let baseUrl = URL(string: self.baseUrl) else {
-            print("[Apptilaus]: failed to create request URL with base URL \(self.baseUrl), app ID \(String(describing: self.appId))")
+        guard let sessionUrl = URL(string: self.sessionUrl) else {
+            print("[Apptilaus]: failed to create request URL with session URL \(self.sessionUrl), app ID \(String(describing: self.appId))")
             return
         }
 
@@ -85,7 +86,7 @@ public class ApptilausManager: NSObject {
             queryItems.append(URLQueryItem(name: "ios_idfv", value: idfv.uuidString))
         }
         
-        let url = baseUrl.appendingPathComponent("v1/device/\(appId)/")
+        let url = sessionUrl.appendingPathComponent("v1/device/\(appId)/")
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems = queryItems
